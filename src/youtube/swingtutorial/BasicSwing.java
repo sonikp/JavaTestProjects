@@ -7,6 +7,7 @@ import javax.swing.JTextField;
 import javax.swing.JTextArea;
 import javax.swing.JLabel;
 import javax.swing.JComboBox;
+import javax.swing.JOptionPane;		//dialog boxes
 
 public class BasicSwing extends JFrame
 {
