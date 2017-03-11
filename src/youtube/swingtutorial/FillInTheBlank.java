@@ -1,21 +1,23 @@
 package youtube.swingtutorial;
 
+// https://www.youtube.com/watch?v=UQgh1vRh68k&list=PLywxFF6tce1-yXyp0qSPYPl2-Mdx7l0A-&index=2
+
 import javax.swing.JOptionPane;
 
 public class FillInTheBlank
 {
 	public static void main(String[] args)
 	{
+		boolean done = false;
+		String answer[] = new String[11];
+		
 		new FillInTheBlank();
 		{
-			boolean done = false;
 			
 			while (!done)
 			{
 				done = true;
 			
-				String[] answer = new String[11];
-				
 				//start us off
 				JOptionPane.showMessageDialog(null, "Make a story :)",
 						"Fill In The Blank Game...",JOptionPane.INFORMATION_MESSAGE);
@@ -69,11 +71,12 @@ public class FillInTheBlank
 				// confirm with user, using a trick loop
 				// default = yes/no/cancel
 				int input = JOptionPane.showConfirmDialog(null, "Want to see the results?"); 
-				
+			
 				// exit routine
 				if (input == 1 || input == 2)
 				{
-					done = false;  
+					done = false; 
+				
 				}
 				else
 				{
@@ -90,10 +93,19 @@ public class FillInTheBlank
 			}	// end while loop
 			if (done)
 			{
-				JOptionPane.showMessageDialog(null, "Each spring, the sky turns " + answer[0] + ". Giant drops of " + answer[1] + "fall from the sky. All this 1 helps the grass and the 2 to grow, but it can make things really 3 too." + 
-						"\nSome places get so much 1, that rivers 4 into the streets. Driving can be tricky when this happens, so some people put special 5 on their cars." + 
-						"And when the 1 is falling, don't forget your 6. Otherwise, your feet might get 7 if you 8 in puddles!" +
-						"After all the 1 has fallen, the skies begin to 9. If you are lucky, you might see a huge 10 stretched across the sky. ");
+				JOptionPane.showMessageDialog(null, "Each spring, the sky turns " + answer[0] + ". Giant drops of " + answer[1] + 
+						" fall from the sky.\nAll this " + answer[1] + " helps the grass and the " + 
+						answer[2] + " to grow, but it can make things \nreally " + answer[3] + " too. \n\n"
+
+						+ "Some places get so much " + answer[1] + ", that rivers " + answer[4] +
+						" into the streets.\nDriving can be tricky when this happens, so some people put special " + 
+						answer[5] + " on \ntheir cars. \n\n"
+
+						+ "And when the " + answer[1] + " is falling, don't forget your " + answer[6] + 
+						". Otherwise, \nyour feet might get " + answer[7] + " if you " + answer[8] + " in puddles! \n\n"
+
+						+ "After all the " + answer[1] + " has fallen, the skies begin to " + answer[9] + 
+						". If you are lucky, \nyou might see a huge " + answer[10] + " stretched across the sky. \n\n");
 			}
 			else
 			{
