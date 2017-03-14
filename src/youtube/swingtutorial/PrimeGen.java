@@ -27,6 +27,21 @@ import java.lang.Runnable;
 
 public class PrimeGen extends JFrame implements ActionListener
 {
+	// variables
+	Primes primes = new Primes(1000);
+	byte process = 0; 
+	/*
+	 * 0:inactive
+	 * 1:test
+	 * 2:list
+	 */
+	
+	boolean stop = false;		// stops the list process it list is taking too long
+	int numPrimes = 0;
+	int numProgress = 0;
+	String text = "";
+	
+	
 	// Organization / Design
 	JPanel mainPanel = new JPanel();	// contains Everything
 	
@@ -74,39 +89,110 @@ public class PrimeGen extends JFrame implements ActionListener
 		
 		// Buttons (west)
 		west.setLayout(new GridLayout(10,1));
-		{
-			west.add(test);
-			west.add(list);
-			west.add(clear);
-			mainPanel.add(west, BorderLayout.WEST);
-			// Variable/progress (south)
-			progress.setString("Waiting");
-			progress.setStringPainted(true);
-			primesFound.setEditable(false);
-			south.add(inputLabel);
-			south.add(input);
-			south.add(progress);
-			south.add(primesFoundLabel);
-			south.add(primesFound);
-			mainPanel.add(south, BorderLayout.SOUTH);
-			add(mainPanel);
-			setVisible(true);
-
-		}
 		
+		// add listeners
+		test.addActionListener(this);
+		list.addActionListener(this);
+		clear.addActionListener(this);
+		
+		// add buttons to west panel
+		west.add(test);
+		west.add(list);
+		west.add(clear);
+		mainPanel.add(west, BorderLayout.WEST);
+		
+		// Variable/progress (south)
+		progress.setString("Waiting");
+		progress.setStringPainted(true);
+		primesFound.setEditable(false);
+		south.add(inputLabel);
+		south.add(input);
+		south.add(progress);
+		south.add(primesFoundLabel);
+		south.add(primesFound);
+		mainPanel.add(south, BorderLayout.SOUTH);
+		add(mainPanel);
+		setVisible(true);
 		
 	}
 	
 	
 	public void actionPerformed(ActionEvent e)
 	{
+		// object to decide where the event came from
 		Object src = e.getSource();
+		
 		//test
 		if (src.equals(test))
 		{
+			process = 1;
+			int num = Integer.parseInt(input.getText());
+			// ensure that primes object has a long enough range
+			if (primes.getLength() < num)
+			{
+				primes = new Primes(num, primes);
+			}
+			// finds prime from object
+			if (primes.test(num))
+			{
+				print(num + " is prime");
+				primesFound.setText("1");
+			}
+			else
+			{
+				print(num + " is not prime");
+				primesFound.setText("0");
+			}
+			printEnd();
+			process = 0;
+		}
+		
+		//list
+		if (src.equals(list))
+		{
+			switch(process)
+			{
+			case 0:
+				process = 2;
+				stop = false;
+				Thread th = new Thread(new List(this));
+				th.start();
+				list.setText("Stop");
+				break;
+			case 2:
+				stop = true;
+				break;
 			
+			}
+
+		}
+		
+		// clear
+		if (src.equals(clear))
+		{
+			primes_list.setText("");
 		}
 	}
 	
+	public void print(String text)
+	{
+		int pos = primes_list.getText().length();
+		primes_list.insert(text, pos);
+		System.out.println(text);
+	}
+	
+	public void printEnd()
+	{
+		print("\n\n---------------------------------------" + 
+				"--------------------------------------------\n\n");
+	}
 }
+
+
+
+
+
+
+
+
 
