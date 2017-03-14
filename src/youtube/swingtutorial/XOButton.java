@@ -19,10 +19,10 @@ public class XOButton extends JButton implements ActionListener
 	// constructor
 	public XOButton()
 	{
-//		X = new ImageIcon(this.getClass().getResource("img/tic-tac-toe-clipart-X.png"));
-//		O = new ImageIcon(this.getClass().getResource("img/tic-tac-toe-clipart-O.png"));
-		X = new ImageIcon(this.getClass().getResource("/tic-tac-toe-clipart-X.png"));
-		O = new ImageIcon(this.getClass().getResource("/tic-tac-toe-clipart-O.png"));
+		X = new ImageIcon(this.getClass().getResource("/X.png"));
+		O = new ImageIcon(this.getClass().getResource("/O.png"));
+//		X = new ImageIcon(this.getClass().getResource("/tic-tac-toe-clipart-X.png"));
+//		O = new ImageIcon(this.getClass().getResource("/tic-tac-toe-clipart-O.png"));
 		
 		// adding the listener to listen and trigger on the same event
 		this.addActionListener(this);
