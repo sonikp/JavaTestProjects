@@ -1,15 +1,15 @@
-package youtube.swingtutorial;
+ package youtube.swingtutorial;
 
 // Layouts
 import java.awt.BorderLayout;
 import java.awt.GridLayout;
 
-// windows
+// panel
 import javax.swing.JFrame;
 import javax.swing.JPanel;
-import javax.swing.JLabel;
 
-// panel windows / components
+// panel / components
+import javax.swing.JLabel;
 import javax.swing.JTextArea;
 import javax.swing.JTextField;
 import javax.swing.JScrollPane;
@@ -36,7 +36,7 @@ public class PrimeGen extends JFrame implements ActionListener
 	 * 2:list
 	 */
 	
-	boolean stop = false;		// stops the list process it list is taking too long
+	boolean stop = false;		// stops the list process if list process is taking too long
 	int numPrimes = 0;
 	int numProgress = 0;
 	String text = "";
@@ -184,7 +184,7 @@ public class PrimeGen extends JFrame implements ActionListener
 	public void printEnd()
 	{
 		print("\n\n---------------------------------------" + 
-				"--------------------------------------------\n\n");
+				"------------------------\n\n");
 	}
 }
 
