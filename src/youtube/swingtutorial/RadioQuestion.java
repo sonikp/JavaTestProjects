@@ -26,18 +26,22 @@ public class RadioQuestion extends JPanel implements ActionListener
 	int selected;
 	boolean used;
 	
-	
+	// ===Panel section====
 	// questions
 	JPanel qPanel = new JPanel();
+	
 	// answers
 	JPanel aPanel = new JPanel();
 	JRadioButton[] responses;
 	ButtonGroup group = new ButtonGroup();
+	
 	// bottom 
 	JPanel botPanel = new JPanel();
 	JButton next = new JButton("Next");
 	JButton finish = new JButton("Finish");
+
 	
+	// used for testing RadioQuestion.java
 	public static void main(String[] args)
 	{
 		JFrame frame = new JFrame("RadioButton Test");
@@ -46,7 +50,7 @@ public class RadioQuestion extends JPanel implements ActionListener
 		frame.setResizable(true);
 		
 		String[] answers = {"wrong1","right","wrong2"};
-		frame.add(new RadioQuestion("what's right?", answers[0], 1, this));
+		frame.add(new RadioQuestion("what's right?", answers, 1));
 		
 		frame.setVisible(true);
 		
@@ -55,17 +59,18 @@ public class RadioQuestion extends JPanel implements ActionListener
 	
 	
 	
-	// constructor
-	public RadioQuestion(String q, String[] options, int ans, Quiz quiz)	//
+	// constructor for RadioQuestion.java class
+	public RadioQuestion(String q, String[] options, int ans)	// , Quiz quiz
 	{
-//		super();
-		this.quiz = quiz;
+//		this.quiz = quiz;		// not used, calling only local class
 		setLayout(new BoxLayout(this, BoxLayout.Y_AXIS));
 		correctAns = ans;
-		// question
+		
+		// question (top)
 		qPanel.add(new JLabel(q));
 		add(qPanel);
-		// answer
+		
+		// answer (middle)
 		responses = new JRadioButton[options.length];
 		for (int i = 0; i < options.length; i++)
 		{
@@ -75,7 +80,38 @@ public class RadioQuestion extends JPanel implements ActionListener
 			aPanel.add(responses[i]);
 		}
 		add(aPanel);
-		// bottom
+		
+		// bottom (bottom)
+		next.addActionListener(this);
+		finish.addActionListener(this);
+		botPanel.add(next);
+		botPanel.add(finish);
+		add(botPanel);
+	}
+	
+	// constructor for Quiz.java class
+	public RadioQuestion(String q, String[] options, int ans, Quiz quiz)	 
+	{
+		this.quiz = quiz;
+		setLayout(new BoxLayout(this, BoxLayout.Y_AXIS));
+		correctAns = ans;
+		
+		// question (top)
+		qPanel.add(new JLabel(q));
+		add(qPanel);
+		
+		// answer (middle)
+		responses = new JRadioButton[options.length];
+		for (int i = 0; i < options.length; i++)
+		{
+			responses[i] = new JRadioButton(options[i]);
+			responses[i].addActionListener(this);
+			group.add(responses[i]);
+			aPanel.add(responses[i]);
+		}
+		add(aPanel);
+		
+		// bottom (bottom)
 		next.addActionListener(this);
 		finish.addActionListener(this);
 		botPanel.add(next);
@@ -86,6 +122,7 @@ public class RadioQuestion extends JPanel implements ActionListener
 	public void actionPerformed(ActionEvent e)
 	{
 		Object src = e.getSource();
+		
 		// next button
 		if (src.equals(next))
 		{
@@ -97,12 +134,36 @@ public class RadioQuestion extends JPanel implements ActionListener
 			}
 		}
 		
+		//finish button
+		if (src.equals(finish))
+		{
+			quiz.showSummary();
+		}
+		
+		// radio buttons
+		for (int i = 0; i < responses.length; i++)
+		{
+			if (src == responses[i])
+			{
+				selected = i;
+			}
+		}
 	}
 	
 	
 	public void showResult()
 	{
-		
+		String text = responses[selected].getText();
+		quiz.total++;
+		if (selected == correctAns)
+		{
+			JOptionPane.showMessageDialog(null, text + " is correct\nWell Done :)");
+		}
+		else
+		{
+			quiz.wrongs++;
+			JOptionPane.showMessageDialog(null, text +" is wrong\nSorry :(");
+		}
 	}
 	
 
