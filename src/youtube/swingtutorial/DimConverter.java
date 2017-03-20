@@ -22,6 +22,8 @@ public class DimConverter extends JFrame implements ChangeListener
 	JTabbedPane tabs = new JTabbedPane();
 	JPanel panelTemp = new JPanel();
 	JPanel panelMass = new JPanel();
+	JPanel panelWeight = new JPanel();
+	JPanel panelSpeed = new JPanel();
 	JSlider slider = new JSlider(0, 500);
 	
 	JPanel panelValues = new JPanel();
@@ -51,6 +53,13 @@ public class DimConverter extends JFrame implements ChangeListener
 		
 		// setup mass
 		tabs.add(panelMass,"Mass");
+		
+		// setup weight
+		tabs.add(panelWeight,"Weight");
+		
+		// setup speed
+		tabs.add(panelSpeed,"Speed");
+				
 		add(tabs);
 		setVisible(true);
 		

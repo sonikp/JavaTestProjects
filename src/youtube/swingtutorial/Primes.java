@@ -69,7 +69,7 @@ public class Primes{
 			primes[i]=true;
 			i++;
 		}
-		//adujusts the points not covered in p based on its primes
+		// adjusts the points not covered in p based on its primes
 		for(i=2;i<=p.getHighest();i++){
 			if(primes[i]){
 				int j=i*(int)Math.ceil((length_old+1)/i);

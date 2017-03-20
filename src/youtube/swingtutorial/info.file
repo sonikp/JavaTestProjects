@@ -1,27 +1,121 @@
-entire series:
+"Chat Bot" Java Tutorial 
+https://www.youtube.com/watch?v=a8RUmnPL8aQ
+
+"Chat Bot Bonus" Java Tutorial 
+https://www.youtube.com/watch?v=s8MYtCmR92U
+
+Basic Java #5 "Methods"
+https://www.youtube.com/watch?v=ux7LEhKU2YE
+
+Basic Java #6 "Strings, Basic Input & Variable Conversions" 
+https://www.youtube.com/watch?v=AKHGAlhbwBA
+
+Basic Java #7 "Basic Logic" 
+https://www.youtube.com/watch?v=fo8bDT_fN-g
+
+Basic Java #8 "Loops" 
+https://www.youtube.com/watch?v=Z6HPDp460m4
+
+Basic Java #9 "Arrays"
+https://www.youtube.com/watch?v=3Zzrz6KZzTw
+
+Basic Java #10 "Multiple Classes"
+https://www.youtube.com/watch?v=ShRENTmlF3s
+
+Basic Java #11 "Inheritance, Interfaces, & Polymorphism" 
+https://www.youtube.com/watch?v=QCgIVU6MfGs
+
+Basic Java #12 "Exceptions" 
+https://www.youtube.com/watch?v=MgKTKFbxX9M
+
+Basic Java #13 "Input Streams"
+https://www.youtube.com/watch?v=MvYRHcOy-u8
+
+Basic Java #14 "Output Streams"
+https://www.youtube.com/watch?v=uSAfpf8YsYQ
+
+Basic Java #15 "Basic Swing" 
+https://www.youtube.com/watch?v=tfIqR2Z-X2w
+
+Basic Java #16 "Action Listeners" 
+https://www.youtube.com/watch?v=-WmEoShIKY0
+
+Basic Java #17 "Executable Jar Files" 
+https://www.youtube.com/watch?v=YinVroodFtc
+
+=====================================================================
+Game Development:
+Java game programming tutorial for AP students/equivalent level - In one video! (7hrs)
+https://www.youtube.com/watch?v=lDzKX3djE-M
+
+Java Tutorial How to Develop Game In Java ( Snake Game ) 
+https://www.youtube.com/watch?v=_SqnzvJuKiA
+
+Java Game Programming - Develop a Brick Breaker Game 
+https://www.youtube.com/watch?v=K9qMm3JbOH0
+
+Programming Flappy Bird in Java! (Full Tutorial) 
+https://www.youtube.com/watch?v=I1qTZaUcFX0
+
+Programming Pong in Java! (Full Tutorial) 
+https://www.youtube.com/watch?v=1wD2CdFlDaE
+=====================================================================
+
+Arend Peter Teaches - Entire series:
 https://www.youtube.com/watch?v=ZDw18yUwz6I&list=PLywxFF6tce1-yXyp0qSPYPl2-Mdx7l0A-
 
 
 
 Java Swing #0 "Basic Swing" Tutorial
 https://www.youtube.com/watch?v=ZDw18yUwz6I
+-Files:
+BasicSwing.java
 
 Java Swing #1 "JOptionPane" Tutorial
 https://www.youtube.com/watch?v=UQgh1vRh68k
-Material:
+-Material:
 http://www.eduplace.com/tales/	=> The Sky Is Falling!
+-Files:
+FillInTheBlank.java
+
 
 Java Swing #2 "Grid Layout & Action Listener" Tutorial
 https://www.youtube.com/watch?v=Db3cC5iPrOM
+-Files:
+TicTacToe.java
+XOButton.java
 
 Java Swing #3 Part I Interface "BorderLayout & Threads" Tutorial
 https://www.youtube.com/watch?v=mYX34tR8Qa0
+-Files:
+PrimeGen.java
+Primes.java
 
 Java Swing #4 Part I Interface "Box & Card Layout" Tutorial
 https://www.youtube.com/watch?v=JULCMBNrdaE
+-Files:
+Quiz.java
+RadioQuestion.java
 
 Java Swing #5 "TabbedPanes & Sliders"
 https://www.youtube.com/watch?v=av3HQLtir50
+-Files:
+DimConverter.java
+DimAnalysis.java(not implemented in the tutorial)
 
 Java Swing #6 "JToolBar & JTextArea"
 https://www.youtube.com/watch?v=XwNgWvEEr9g
+-Files:
+TextEditor.java
+
+===================================================
+TheNewBoston
+All tutorials
+https://www.youtube.com/watch?v=Hl-zzrqQoSE&list=PLFE2CE09D83EE3E28
+
+Java Programming Tutorial - 50 - Graphical User Interface GUI 
+https://www.youtube.com/watch?v=jJjg4JweJZU
+
+mybringback
+Learn Java Programming- The Basics
+https://www.youtube.com/playlist?list=PLDAA5DE54FB5215EC
