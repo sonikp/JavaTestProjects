@@ -33,7 +33,7 @@ public class DimConverter extends JFrame implements ChangeListener
 	
 	public DimConverter()
 	{
-		// swing stuff
+		// swing layout
 		super("Dimensional Analysis");
 		setDefaultCloseOperation(EXIT_ON_CLOSE);
 		setSize(400,300);
@@ -65,13 +65,13 @@ public class DimConverter extends JFrame implements ChangeListener
 		
 	}
 	
-	void updateTemp()
+	public void updateTemp()
 	{
 		int baseTemp = slider.getValue();
 		
 		int tKelvin = baseTemp;
 		int tCelcius = baseTemp - 273;
-		int tFahrenheit = (int)(tCelcius * (9f / 5) + 32);
+		int tFahrenheit = (int)(tCelcius * (9f / 5) + 32);  // f is to ensure that you don't get integer division errors
 		
 		fieldKelvin.setText(tKelvin + " K");
 		fieldCelcius.setText(tCelcius + " \u00b0C");

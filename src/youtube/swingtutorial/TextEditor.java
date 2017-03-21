@@ -4,8 +4,10 @@ package youtube.swingtutorial;
 
 import javax.swing.JFrame;
 import javax.swing.JPanel;
+
 import javax.swing.JToolBar;
 import javax.swing.JTextArea;
+
 import javax.swing.JButton;
 import javax.swing.JOptionPane;
 import java.awt.BorderLayout;
@@ -36,9 +38,6 @@ public class TextEditor extends JFrame
 		p.add(tb, BorderLayout.NORTH);
 		p.add(t, BorderLayout.CENTER);
 		add(p);
-		
-		
-		
 		setVisible(true);
 	}
 	
