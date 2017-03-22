@@ -22,6 +22,10 @@ import java.util.ArrayList;
 public class Hangman
 {
 	// variables
+	int arraySize;
+	String storeLetter[] = new String[arraySize];
+	int guessLocation[] = new int[arraySize];
+	int guessLocNum;
 	
 	
 	// constructor

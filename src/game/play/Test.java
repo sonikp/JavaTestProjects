@@ -2,6 +2,7 @@ package game.play;
 
 // test stuff: 
 import java.util.ArrayList;
+import java.util.Scanner;
 
 public class Test
 {
@@ -20,6 +21,11 @@ public class Test
 		
 		// should by user input, & configure array size
 		//String userInput = "mississippi";
+		Scanner input= new Scanner(System.in);
+		System.out.println("Enter word");
+		String word = input.nextLine();
+		System.out.println("You entered: " + word);
+		
 		
 		
 		//arraySize = userInput.length();
@@ -35,14 +41,7 @@ public class Test
 		for (int i = 0; i < storeLetter.length; i++)
 		{
 			System.out.println(storeLetter[i]);
-			guessLocNum = 0;
-			if ( storeLetter[i] == guessedLetter)
-			{
-				System.out.println(true);
-				System.out.println("Location " + i);
-				guessLocation[guessLocNum] = i;
-				guessLocNum++;
-			}
+
 		}
 		
 		
