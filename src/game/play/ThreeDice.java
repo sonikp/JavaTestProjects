@@ -38,7 +38,7 @@ next new game, the entire looser of the last game is automatically the starter o
 
  */
 
-package game.threedice;
+package game.play;
 
 
 public class ThreeDice
