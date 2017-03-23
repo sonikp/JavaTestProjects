@@ -2,13 +2,15 @@ package game.play;
 
 // test stuff: 
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.Scanner;
 
 public class Test
 {
 	int arraySize;
 //	String storeLetter[] = new String[arraySize];
-	String storeLetter[] = {"m","i","s","s","i","p","p","i"};
+//	String storeLetter[] = {"m","i","s","s","i","p","p","i"};
+	char[] guessWord;
 	int guessLocation[] = new int[arraySize];
 	int guessLocNum;
 	
@@ -18,29 +20,40 @@ public class Test
 	public Test()
 	{
 		System.out.println("......running.....");
-		
+		// 1. User Input COMPLETED
+//		Scanner userInput= new Scanner(System.in);
+//		System.out.println("Enter word");
+//		String word = userInput.nextLine();
+//		System.out.println("You entered: " + word);
 		// should by user input, & configure array size
-		//String userInput = "mississippi";
-		Scanner input= new Scanner(System.in);
-		System.out.println("Enter word");
-		String word = input.nextLine();
-		System.out.println("You entered: " + word);
+		//2. put word into array
+		String userInput = "mississippi";
+		guessWord = userInput.toCharArray();
+		System.out.println(Arrays.toString(guessWord));
+		System.out.println("You entered: " + userInput);
 		
 		
 		
 		//arraySize = userInput.length();
-		arraySize = storeLetter.length;
+//		arraySize = storeLetter.length;
 		String guessedLetter = "i";
 		
 		// show information about word
 //		System.out.println("\n\nword entered\t: " + userInput);
 //		System.out.println("word size\t: " + userInput.length());
 
-		System.out.println(storeLetter[0]);
+//		System.out.println(storeLetter[0]);
+		// 3. read and identify letter
 		
-		for (int i = 0; i < storeLetter.length; i++)
+		for (int i = 0; i < userInput.length(); i++)
 		{
-			System.out.println(storeLetter[i]);
+//			System.out.println(storeLetter[i]);
+//			System.out.println(userInput.charAt(i));;
+			
+			System.out.println(userInput.indexOf("a"));;		//guessedLetter
+//			userInput.indexOf(guessedLetter, i);
+			
+		
 
 		}
 		

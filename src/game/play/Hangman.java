@@ -11,7 +11,8 @@ package game.play;
  * 
  * 1:file make logic
  * 2:make gui
- * 
+ * Other Notes worth reading:
+ * http://codereview.stackexchange.com/questions/90328/word-guessing-game
  */
 
 import java.util.ArrayList;
