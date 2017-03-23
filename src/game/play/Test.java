@@ -28,9 +28,10 @@ public class Test
 		// should by user input, & configure array size
 		//2. put word into array
 		String userInput = "mississippi";
-		guessWord = userInput.toCharArray();
-		System.out.println(Arrays.toString(guessWord));
+//		guessWord = userInput.toCharArray();
+//		System.out.println(Arrays.toString(guessWord));
 		System.out.println("You entered: " + userInput);
+		System.out.println(userInput.indexOf("i", 11));
 		
 		
 		
@@ -50,13 +51,12 @@ public class Test
 //			System.out.println(storeLetter[i]);
 //			System.out.println(userInput.charAt(i));;
 			
-			System.out.println(userInput.indexOf("a"));;		//guessedLetter
+			System.out.print(userInput.indexOf("s", i));;		//guessedLetter
 //			userInput.indexOf(guessedLetter, i);
 			
 		
 
 		}
-		
 		
 		
 		/*
