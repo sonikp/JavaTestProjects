@@ -14,6 +14,9 @@ package game.play;
  * Other Notes worth reading:
  * http://codereview.stackexchange.com/questions/90328/word-guessing-game
  */
+/**
+ * I'm stuck on, I have 0 guesses remaining, continue? Need better logic
+ */
 
 import java.util.ArrayList;
 
@@ -68,6 +71,7 @@ public class Hangman
 				guessedLetter = guessLetter();
 				System.out.println("(Hangman method: chosen letter = " + guessedLetter + ")");
 				finishRound = false;
+				//numOfGuesses--;	// trying for zero bug
 				checkForLetter(guessedLetter);
 			}
 			else
@@ -100,6 +104,7 @@ public class Hangman
 		Scanner continueChoice = new Scanner(System.in);
 		guessedLetter = continueChoice.nextLine();
 		System.out.println("DEBUG : " + guessedLetter);
+		//numOfGuesses--;	// trying for zero bug
 		return guessedLetter;
 	}
 	
@@ -121,7 +126,7 @@ public class Hangman
 		else
 		{
 			playSomeMore = true;
-			//numOfGuesses--;
+			//numOfGuesses--;	// trying for zero bug
 			System.out.println("time for another letter");
 			//guessLetter();
 			return true;
@@ -164,9 +169,10 @@ public class Hangman
 					}
 
 				}
-				if ( numOfGuesses == 1)
+				if ( numOfGuesses == 0)
 				{
 					System.out.println("Finished");
+					//finishRound = true; // issues with zero bug
 				}
 				else
 				{
