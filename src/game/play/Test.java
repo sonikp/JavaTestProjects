@@ -9,85 +9,87 @@ public class Test
 {
 	int arraySize;
 	String storeLetter[] = new String[arraySize];
-//	String storeLetter[] = {"m","i","s","s","i","p","p","i"};
+	String storedLetter[] = {"m","i","s","s","i","s","s","i","p","p","i"};
+	String storesLetter[] = {"-","-","-","-","-","-","-","-","-","-","-"};
+	ArrayList<String> storeLetterList = new ArrayList<>();
+	
+	
 	char[] guessWord;
 	int guessLocation[] = new int[arraySize];
 	int guessLocNum;
 	int guesses = 6;
 	String guessLetter;
+	// new
 	
+	int letterLocation;
+	String userGuess;
 	
 	
 	
 	public Test()
 	{
+		
 
 		
 		System.out.println("......running.....");
 
 		
 		String userInput = "wooloomooloo";  // 	mississippi
-		//String userGuess = "o";
-		Test nextLetter = new Test();
-		String userGuess = "o";
-		guessLetter = nextLetter.nextGuess();
-		int index = 0;
-		int count = 0;
+		arraySize = userInput.length() + 1;
+		userGuess = "m"; 
+		System.out.println(userInput + "\t" + userGuess + " " + arraySize + "\n");
 		
-		while ( guesses != 0)
+		// read arrays
+		for ( String s: storesLetter)
 		{
-			//userGuess = 
 
-			while ( index != -1)
-			{
-				index = 0;		// reset 
-				System.out.println("The letter \" " + userGuess + " \" you chose appears in the following locations: ");
-				for ( int i = 0; i <= userInput.length(); i++)
-				{
-	
-					index = userInput.indexOf(userGuess, i );
-					i = index;
-					if ( index == -1)
-					{
-						i = userInput.length();
-						if ( index == -1 && count == 0)
-						{
-							System.out.println("letter does not appear");
-						}
-					}
-					else if ( index >= 0)
-					{
-						System.out.print(userInput.indexOf(userGuess, i ) + ", ");
-					}
-					count++;
-				}
-			}
-			guesses--;
-			System.out.println("\nYou have " + guesses + " guesses remaining, continue?");
-			Scanner continueChoice = new Scanner(System.in);
-			System.out.print("y or n:\t");
-			String again = continueChoice.nextLine();
-			if ( again == "n" )
-			{
-				index = -1;
-				System.out.println(index);
-			}
-			else
-			{
-				System.out.println("time for another letter");
-				//nextGuess();
-			}
+			System.out.print(s);
+
 		}
+		
+		System.out.println("\nfoo\n");
+		
+		for ( int i = 0; i < storedLetter.length; i++)
+		{
 
+			System.out.print(storedLetter[i]);
+
+		}
+		System.out.println("\nfoo\n");
+		
+		
+		for ( int i = 0; i < userInput.length(); i++)	//arraySize	
+		{
+			storeLetter[i] = "t";
+			System.out.print(storeLetter[i]);
+		}
+		
+		System.out.println("\nfoo");
+		
+		/*
+		// read
+		for ( int i = 0; i <= userInput.length(); i++)
+		{
+			
+			System.out.println(storeLetter[i]);
+		}
+		*/
 	}
+	
+	
+	
+	
 	
 	public String nextGuess()
 	{
+		/*
 		System.out.println("Please guess a letter ");
 		Scanner continueChoice = new Scanner(System.in);
 		
 		String guessLetter = continueChoice.nextLine();
+		*/
 		return guessLetter;
+
 	}
 	
 	
@@ -102,7 +104,7 @@ public class Test
 	public static void main(String[] args)
 	{
 		new Test();
-//		aTest.theStringDemo();
+
 		
 		
 	}
