@@ -15,7 +15,7 @@ package game.play;
  * http://codereview.stackexchange.com/questions/90328/word-guessing-game
  */
 /**
- * I'm stuck on, I have 0 guesses remaining, continue? Need better logic
+ * Status: need to add to an array to display the characters guessed
  */
 
 import java.util.ArrayList;
@@ -43,7 +43,7 @@ public class Hangman
 	
 	int guessLocation[] = new int[arraySize];
 	int guessLocNum;
-	int numOfGuesses = 2;
+	int numOfGuesses = 6;
 	String setMessageOne = "The letter \" ";
 	String setMessageTwo = " \" you chose";
 	String setMessageDoes = " appears in the following locations: ";
@@ -53,25 +53,22 @@ public class Hangman
 	// constructor
 	public Hangman()
 	{
-		System.out.print("Lets play hangman\t");
-		System.out.println("you get 6 guesses, you have:  " + numOfGuesses);
+		System.out.println("Lets play hangman\t");
+		System.out.println("You get 6 guesses, you still have:  " + numOfGuesses + " remaining");
 		inputWord();
 		arraySize = word.length();
 		
-		
-		//word = "wooloomooloo";		// mississippi
-		
-
 		
 		while (numOfGuesses != 0)
 		{
 			if ( playSomeMore == true)
 			{
-				System.out.println("Ok, lets guess some letters");
+				// DEBUG
+//				System.out.println("Ok, lets guess some letters");
 				guessedLetter = guessLetter();
-				System.out.println("(Hangman method: chosen letter = " + guessedLetter + ")");
+				// DEBUG
+//				System.out.println("(Hangman method: chosen letter = " + guessedLetter + ")");
 				finishRound = false;
-				//numOfGuesses--;	// trying for zero bug
 				checkForLetter(guessedLetter);
 			}
 			else
@@ -83,6 +80,7 @@ public class Hangman
 			
 
 		}
+		System.out.println("Big Bad Final Game Over");
 	}
 	
 	public void inputWord()
@@ -93,7 +91,8 @@ public class Hangman
 		word = userInput.nextLine();
 		arraySize = word.length();
 		System.out.println("You entered:\t " + word);
-		System.out.println("Word has " + arraySize + " letters");
+		// DEBUG
+//		System.out.println("Word has " + arraySize + " letters");
 		
 	}
 	
@@ -103,19 +102,25 @@ public class Hangman
 		System.out.println("\n\nPlease guess a letter ");
 		Scanner continueChoice = new Scanner(System.in);
 		guessedLetter = continueChoice.nextLine();
-		System.out.println("DEBUG : " + guessedLetter);
-		//numOfGuesses--;	// trying for zero bug
 		return guessedLetter;
 	}
 	
 	public boolean continuePlay()
 	{
-		System.out.println("\nYou have " + numOfGuesses + " guesses remaining, continue?");
+		System.out.println("\n\nYou have " + numOfGuesses + " guesses remaining, continue?");
+		
+		if ( numOfGuesses == 0)
+		{
+			System.out.println("Thanks you've used up all your guesses ");
+			playSomeMore = false;
+			return false;
+		}
 
 		Scanner continueChoice = new Scanner(System.in);
 		System.out.print("y or n:\t");
 		String again = continueChoice.next();
-		System.out.println("again " + again);
+		// DEBUG
+//		System.out.println("again " + again);
 		
 		if ( again.equals("n") )
 		{
@@ -126,9 +131,8 @@ public class Hangman
 		else
 		{
 			playSomeMore = true;
-			//numOfGuesses--;	// trying for zero bug
-			System.out.println("time for another letter");
-			//guessLetter();
+			// DEBUG
+//			System.out.println("time for another letter");
 			return true;
 			
 		}
@@ -140,8 +144,9 @@ public class Hangman
 		userGuess = guess;
 		userInput = word;
 		
-		System.out.println(guess + " " + userGuess);
-		System.out.println(word + " " + userInput);
+		// DEBUG
+//		System.out.println(guess + " " + userGuess);
+//		System.out.println(word + " " + userInput);
 		
 		
 		while ( finishRound == false )	// removing to break loop "numOfGuesses != 0"
@@ -164,7 +169,7 @@ public class Hangman
 					
 					else if (letterLocation == -1 && i == 0)
 					{
-						System.out.println("....does not appear in the word");
+						System.out.println("\n....does not appear in the word");
 						
 					}
 
@@ -172,13 +177,12 @@ public class Hangman
 				if ( numOfGuesses == 0)
 				{
 					System.out.println("Finished");
-					//finishRound = true; // issues with zero bug
 				}
 				else
 				{
 					finishRound = true;
 					numOfGuesses--;
-					continuePlay();  // on num of guessses continue, stays in this method, does not return to line = 62
+					continuePlay();  
 					
 				}
 				
@@ -194,9 +198,9 @@ public class Hangman
 	
 	public static void main(String[] args)
 	{
-		//guessedLetter = "o";
+		
 		new Hangman();
-		//System.out.println("You entered:\t " + word);
+	
 		
 	}
 }
