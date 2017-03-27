@@ -2,7 +2,7 @@ package game.play;
 
 /**
  * Create a two player version of hangman. The program should first ask for the first player to enter a word and save the word. 
- * Next, the second player shout be allowed to guess letters. If a letter appears in the word, then the should be told at what position.
+ * Next, the second player should be allowed to guess letters. If a letter appears in the word, then the should be told at what position.
  * After 6 guesses the player has one shot of guessing the word. 
  * 
  * Use a for loop to iterate through all the guesses. Use a nested for loop to iterate through all the characters of the word.
@@ -15,7 +15,9 @@ package game.play;
  * http://codereview.stackexchange.com/questions/90328/word-guessing-game
  */
 /**
- * Status: need to add to an array to display the characters guessed
+ * Status: 
+ * need to add to an array to display the characters guessed
+ * need the after 6 guesses, one shot to guess the word
  */
 
 import java.util.ArrayList;
