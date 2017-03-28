@@ -40,7 +40,7 @@ public class Test
 
 		
 		userInput = "wooloomooloo";  // 	mississippi
-		guessLetter = 'o';
+		guessLetter = 'l';
 		arraySize = userInput.length();
 		//storeLetter = new String[arraySize];
 		wordToGuess = new char[arraySize];
