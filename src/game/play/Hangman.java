@@ -31,6 +31,16 @@ public class Hangman
 {
 	// variables
 	
+	char[] guessWord;
+	char[] wordToGuess;
+	char[] guessAttempts;
+	char guessLetter;
+	
+	int correctGuess = 0;
+	
+	char guess;
+	
+	
 	static String word;
 	static String guessedLetter;
 	int arraySize;
@@ -57,7 +67,54 @@ public class Hangman
 	{
 		System.out.println("Lets play hangman\t");
 		System.out.println("You get 6 guesses, you still have:  " + numOfGuesses + " remaining");
+		
+		//
 		inputWord();
+		checkCharInWord();
+		
+		
+//		System.out.println("const: " + userInput + "\t" + guessLetter + "\t" + arraySize + " ");	// DEBUG
+
+		/*
+		// DEBUG CODE
+		System.out.println("\n======READ=FROM=WORD=ARRAY================");
+		// read
+		for ( char r: wordToGuess)
+		{
+			System.out.print(r + " ");
+		}
+		System.out.println("\n======READ=FROM=GUESS=ARRAY================");
+		// read
+		for ( char r: guessAttempts)
+		{
+			System.out.print(r + " ");
+		}
+		
+		System.out.println("\n=======================\n");	
+		*/
+		
+		
+		
+
+//		checkCharInWord();
+		
+		
+		/*
+		while (numOfGuesses != 0)
+		{
+			if ( playSomeMore == true)
+			{
+				//checkIfCharInWord(guessLetter);
+			}
+			else
+			{
+				
+			}
+		}
+		
+		System.out.println("Big Bad Final Game Over");
+		*/
+		/*
 		arraySize = word.length();
 		
 		
@@ -85,10 +142,25 @@ public class Hangman
 		}
 		
 		System.out.println("Big Bad Final Game Over");
+		*/
 	}
 	
 	public void inputWord()
 	{
+		
+		userInput = "wooloomooloo";  // 	mississippi
+		guessLetter = 'o';
+		arraySize = userInput.length();
+		//storeLetter = new String[arraySize];
+		wordToGuess = new char[arraySize];
+		guessAttempts = new char[arraySize];
+
+//		userGuess = "m"; 
+		System.out.println("meth: " + userInput + "\t" + guessLetter + "\t" + arraySize + "\n");
+		
+
+		
+		/*
 		// 1. (enter word, add characters in a) User Input COMPLETED
 		Scanner userInput= new Scanner(System.in);
 		System.out.print("\nEnter word:\t");
@@ -97,15 +169,290 @@ public class Hangman
 		System.out.println("You entered:\t " + word);
 		// DEBUG
 //		System.out.println("Word has " + arraySize + " letters");
+		*/
 		
+		
+		// fill wordToGuess[] with characters from word
+		for (int i = 0; i < userInput.length(); i++)
+		{
+			/*
+			// TBD -------------
+			char foo = userInput.charAt(i);
+			System.out.println(foo);
+			*/
+			wordToGuess[i] = userInput.charAt(i);
+		}
+		
+		// fill guessAttempts[] with --
+		for (int i = 0; i < userInput.length(); i++)
+		{
+			/*
+			// TBD -------------
+			char foo = userInput.charAt(i);
+			System.out.println(foo);
+			*/
+			guessAttempts[i] = '-';
+		}
+				
+		
+		
+		
+	}
+	
+	public void checkCharInWord()	//char guessLetter
+	{
+		
+		System.out.println("chrchk: " + userInput + "\t" + guessLetter + " " + arraySize + "\n");
+		
+		guessLetter = 'w';
+		
+		int ifGuessExists = userInput.indexOf(guessLetter);
+		System.out.println(ifGuessExists);
+		int guessNumber = 0;
+		
+		while ( finishRound == false )
+		{
+			
+			while ( ifGuessExists != -1 || guessNumber ==  arraySize)
+			{
+				
+				for (int i = 0; i < userInput.length(); i++)
+				{
+					if (guessLetter == wordToGuess[i])
+					{
+						guessAttempts[i] = guessLetter;
+						correctGuess++;
+						guessNumber++;
+					}
+
+				}
+				finishRound = true;
+				System.out.println("\n=======================\n");	
+				
+				if (ifGuessExists != -1 || guessNumber == 6 )
+				{
+					guessNumber++;
+				}
+			}
+		}
+		
+		
+		/*
+		int foo = userInput.indexOf(guessLetter);
+		System.out.println(foo);
+		
+		
+		// DEBUG CODE
+		System.out.println("\n======READ=FROM=WORD=ARRAY================");
+		// read
+		for ( char r: wordToGuess)
+		{
+			System.out.print(r + " ");
+		}
+		System.out.println("\n======READ=FROM=GUESS=ARRAY================");
+		// read
+		for ( char r: guessAttempts)
+		{
+			System.out.print(r + " ");
+		}
+		
+		System.out.println("\n=======================\n");	
+		
+		
+		guessLetter = 't';
+		foo = userInput.indexOf(guessLetter);
+		System.out.println(foo);
+		// guessing function
+		for (int i = 0; i < userInput.length(); i++)
+		{
+			if ( guessLetter != wordToGuess[i] )
+			{
+				System.out.print("NO ");
+				
+			} 
+			else if (guessLetter == wordToGuess[i])
+			{
+				guessAttempts[i] = guessLetter;
+				correctGuess++;
+			}
+
+		}
+		System.out.println("\n=======================\n");	
+		
+		// read
+		for ( char r: guessAttempts)
+		{
+			System.out.print(r + " ");
+		}
+		
+		System.out.println("\n=======================\n");	
+		
+		guessLetter = 'm';
+		foo = userInput.indexOf(guessLetter);
+		System.out.println(foo);
+		// guessing function
+		for (int i = 0; i < userInput.length(); i++)
+		{
+			if ( guessLetter == wordToGuess[i])
+			{
+				guessAttempts[i] = guessLetter;
+				correctGuess++;
+			}
+
+		}
+		
+		// read
+		for ( char r: guessAttempts)
+		{
+			System.out.print(r + " ");
+		}
+		
+		System.out.println("\n=======================\n");	
+		
+		guessLetter = 'l';
+		foo = userInput.indexOf(guessLetter);
+		System.out.println(foo);
+		// guessing function
+		for (int i = 0; i < userInput.length(); i++)
+		{
+			if ( guessLetter == wordToGuess[i])
+			{
+				guessAttempts[i] = guessLetter;
+				correctGuess++;
+			}
+
+		}
+		
+		// read
+		for ( char r: guessAttempts)
+		{
+			System.out.print(r + " ");
+		}
+		
+		System.out.println("\n=======================\n");
+		
+		guessLetter = 'o';
+		foo = userInput.indexOf(guessLetter);
+		System.out.println(foo);
+		// guessing function
+		for (int i = 0; i < userInput.length(); i++)
+		{
+			if ( guessLetter == wordToGuess[i])
+			{
+				guessAttempts[i] = guessLetter;
+				correctGuess++;
+			}
+
+		}
+		
+		// read
+		for ( char r: guessAttempts)
+		{
+			System.out.print(r + " ");
+		}
+		
+		System.out.println("\n=======================\n");
+		*/
+		/*
+		for (int i = 0; i < userInput.length(); i++)
+		{
+			if (guessLetter == wordToGuess[i])	//	guessLetter != wordToGuess[i]
+			{
+				System.out.println("Letter IS In Word");
+			}
+			else if (guessLetter == wordToGuess[i])	//	guessLetter == wordToGuess[i]
+			{
+				System.out.println("Letter Not In Word");	//		guessAttempts[i] = guessLetter
+			}
+			
+		}
+		*/
+		
+		
+//		while ( finishRound == false )
+//		{
+//			
+//
+//		}
+		
+		
+		/*
+		//toArrayTest();
+		for (int i = 0; i < userInput.length(); i++)
+		{
+			char foo = userInput.charAt(i);
+			System.out.println(foo);
+			wordToGuess[i] = userInput.charAt(i);
+		}
+		
+		// fill guessAttempt with --
+		for (int i = 0; i < userInput.length(); i++)
+		{
+			char foo = userInput.charAt(i);
+			System.out.println(foo);
+			guessAttempts[i] = '-';
+		}
+		*/
+		
+		/*
+		System.out.println("\n======READ=FROM=WORD=ARRAY================");
+		
+		// read
+		for ( char r: wordToGuess)
+		{
+			System.out.print(r + " ");
+		}
+		
+		System.out.println("\n======READ=FROM=GUESS=ARRAY================");
+		
+		// read
+		for ( char r: guessAttempts)
+		{
+			System.out.print(r + " ");
+		}
+		
+		System.out.println("\n=======================\n");	
+		
+		// find out if array contains a particular guessed letter (guessLetter) and if where
+		for (int i = 0; i < userInput.length(); i++)
+		{
+			System.out.print(guessLetter + " ");
+			
+			if ( guessLetter == wordToGuess[i] )
+			{
+				System.out.println("+++");
+				
+				System.out.println(guessAttempts[i]);
+				System.out.println(guessLetter);
+				
+				System.out.println("+++");
+				
+				guessAttempts[i] = guessLetter;
+			}
+						
+		}
+		
+		System.out.println("\n=======================");
+		
+		// read guessAttempts
+		for ( char r: guessAttempts)
+		{
+			System.out.print(r + " ");
+		}
+		
+		System.out.println("\n=======================\n");	
+		*/
 	}
 	
 	public String guessLetter()
 	{
+		
+		/*
 		// 2. Guess letter
 		System.out.println("\n\nPlease guess a letter ");
 		Scanner continueChoice = new Scanner(System.in);
 		guessedLetter = continueChoice.nextLine();
+		*/
 		return guessedLetter;
 	}
 	
