@@ -8,7 +8,7 @@ import java.util.Scanner;
 public class Test
 {
 	int arraySize;
-	String storeLetter[] = new String[arraySize];
+	String storeLetter[]; // = new String[arraySize];
 	String storedLetter[] = {"m","i","s","s","i","s","s","i","p","p","i"};
 	String storesLetter[] = {"-","-","-","-","-","-","-","-","-","-","-"};
 	ArrayList<String> storeLetterList = new ArrayList<>();
@@ -35,7 +35,9 @@ public class Test
 
 		
 		String userInput = "wooloomooloo";  // 	mississippi
-		arraySize = userInput.length() + 1;
+		arraySize = userInput.length();
+		storeLetter = new String[arraySize];
+
 		userGuess = "m"; 
 		System.out.println(userInput + "\t" + userGuess + " " + arraySize + "\n");
 		
@@ -57,7 +59,7 @@ public class Test
 		}
 		System.out.println("\nfoo\n");
 		
-		
+		System.out.println(storeLetter[0]);
 		for ( int i = 0; i < userInput.length(); i++)	//arraySize	
 		{
 			storeLetter[i] = "t";
