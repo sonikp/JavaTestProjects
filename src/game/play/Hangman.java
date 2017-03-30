@@ -28,27 +28,34 @@ import java.util.Scanner;
 public class Hangman
 {
 	
-	// variables
+	// variables		// have made all variables 'public'
 	
-	String userInput;
+	public String userInput;
 	
-	char[] wordToGuess;
-	char[] finalGuess;
-	char[] guessAttempts;
-	char guessLetter;
+	public char[] wordToGuess;
+	public char[] finalGuess;
+	public char[] guessAttempts;
+	public char guessLetter;
 	
-	int arraySize;
-	int correctGuess = 0;
-	int numOfGuesses = 6;
+	public int arraySize;
+	public int correctGuess = 0;
+	public int numOfGuesses = 6;
 	
-	Boolean finishRound = false;
-	Boolean playSomeMore = true;
-	Boolean finalGuessCorrect;
+	public Boolean finishRound = false;
+	public Boolean playSomeMore = true;
+	public Boolean finalGuessCorrect;
+	
+	// additional for GUI
+	public String greeting1 = "greeting1";
+	public String greeting2 = "greeting2";
 
 	
 	// constructor
 	public Hangman()
 	{
+		
+//		greeting = "Lets play hangman\t";
+//		System.out.println(greeting);
 		System.out.println("Lets play hangman\t");
 		System.out.println("You get 6 guesses, you still have:  " + numOfGuesses + " remaining");
 
@@ -244,11 +251,12 @@ public class Hangman
 		
 	}
 	
-	
+	/*
 	public static void main(String[] args)
 	{
 		
 		new Hangman();
 
 	}
+	*/
 }
