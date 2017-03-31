@@ -188,7 +188,12 @@ public class HangmanMiniUI extends JFrame implements ActionListener
 		if (src.equals(testMethod))
 		{
 			// *** I'm stuck here how do I print to textarea()
+			
+			
 			playgame.populateArrays();
+//			hangman_list.setText(playgame.populateArrays());
+			
+			
 
 			/*
 			// display number from input field in textArea
