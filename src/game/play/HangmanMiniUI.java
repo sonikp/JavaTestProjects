@@ -139,7 +139,7 @@ public class HangmanMiniUI extends JFrame implements ActionListener
 //			int num = Integer.parseInt(input.getText());
 			String inputString = input.getText();
 			print(inputString + " <= is the new word");
-			input.setText("Letter Submitted!");
+//			input.setText("Letter Submitted!");
 			
 			playgame.setInputWord(inputString);
 			printEnd();
@@ -178,7 +178,7 @@ public class HangmanMiniUI extends JFrame implements ActionListener
 			// display letter from input field in textArea
 			String inputString = input.getText();
 			print(inputString + " is a letter");
-			input.setText("Letter Submitted!");
+//			input.setText("Letter Submitted!");
 			
 			printEnd();
 
@@ -192,6 +192,18 @@ public class HangmanMiniUI extends JFrame implements ActionListener
 			
 			playgame.populateArrays();
 //			hangman_list.setText(playgame.populateArrays());
+			
+			/*
+			http://stackoverflow.com/questions/629315/dynamically-refresh-jtextarea-as-processing-occurs
+			jTextArea.update(jTextArea.getGraphics());
+			
+			
+			
+			http://stackoverflow.com/questions/9563830/how-to-display-output-in-text-area-in-java
+			textArea.setText();
+			
+			
+			 */
 			
 			
 
