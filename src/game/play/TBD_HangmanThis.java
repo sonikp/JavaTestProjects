@@ -27,7 +27,7 @@ import java.util.Scanner;
 
 
 
-public class HangmanThis
+public class TBD_HangmanThis
 {
 	// variables
 	
@@ -63,7 +63,7 @@ public class HangmanThis
 	
 	
 	// constructor
-	public HangmanThis()
+	public TBD_HangmanThis()
 	{
 		System.out.println("Lets play hangman\t");
 		System.out.println("You get 6 guesses, you still have:  " + numOfGuesses + " remaining");
@@ -550,7 +550,7 @@ public class HangmanThis
 	public static void main(String[] args)
 	{
 		
-		new HangmanThis();
+		new TBD_HangmanThis();
 	
 		
 	}

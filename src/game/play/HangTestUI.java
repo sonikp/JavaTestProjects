@@ -38,7 +38,7 @@ public class HangTestUI extends JFrame implements ActionListener
 	
 	String userInput;
 	
-	Hangman hMan = new Hangman();
+//	Hangman hMan = new Hangman();
 	
 	// Organization / Design
 	JPanel mainPanel = new JPanel();	// contains Everything
@@ -142,7 +142,7 @@ public class HangTestUI extends JFrame implements ActionListener
 
 
 			print(hm.greeting1 + "\n");
-			print(hMan.greeting2  + "\n");
+//			print(hMan.greeting2  + "\n");
 
 			
 		}
