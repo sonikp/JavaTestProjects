@@ -189,9 +189,11 @@ public class HangmanMiniUI extends JFrame implements ActionListener
 		{
 			// *** I'm stuck here how do I print to textarea()
 			
-			
-			playgame.populateArrays();
-//			hangman_list.setText(playgame.populateArrays());
+//			int foo = 5;
+			String buffer = playgame.populateArrays();
+//			hangman_list.setText("poop" + foo);
+			hangman_list.setText(buffer);
+			System.out.println(buffer);
 			
 			/*
 			http://stackoverflow.com/questions/629315/dynamically-refresh-jtextarea-as-processing-occurs

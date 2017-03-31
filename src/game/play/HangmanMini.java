@@ -23,10 +23,54 @@ public class HangmanMini
 		guessLetter = 'r';
 	}
 	
-	public void populateArrays()
+//	public void populateArrays()
+//	{
+//		
+//		System.out.println("userInput:" + userInput + " arraySize " + arraySize);
+//		arraySize = userInput.length();
+//		
+//		// scoring
+////		correctGuess = arraySize;
+//		
+//		
+//		
+//		wordToGuess = new char[arraySize];
+//		guessAttempts = new char[arraySize];
+//		
+//		// Populate array with userInput
+//		for (int i = 0; i < userInput.length(); i++)
+//		{
+//			wordToGuess[i] = userInput.charAt(i);
+//		}
+//		
+//		// Populate guessAttempt with --
+//		for (int i = 0; i < userInput.length(); i++)
+//		{
+//			guessAttempts[i] = '-';
+//		}
+//		
+//		// DEBUG CODE
+//		System.out.println("\n======READ=FROM=WORD=ARRAY================");
+//		// read
+//		for ( char r: wordToGuess)
+//		{
+//			System.out.print(r + " ");
+//		}
+//		System.out.println("\n======READ=FROM=GUESS=ARRAY================");
+//		// read
+//		for ( char r: guessAttempts)
+//		{
+//			System.out.print(r + " ");
+//		}
+//		
+//		System.out.println("\n=======================\n");	
+//		
+//	}
+	
+	public String populateArrays()
 	{
-		
-		System.out.println("userInput:" + userInput + " arraySize " + arraySize);
+		StringBuilder buffer = new StringBuilder();
+		buffer.append("userInput:" + userInput + " arraySize " + arraySize);
 		arraySize = userInput.length();
 		
 		// scoring
@@ -50,22 +94,24 @@ public class HangmanMini
 		}
 		
 		// DEBUG CODE
-		System.out.println("\n======READ=FROM=WORD=ARRAY================");
+		buffer.append("\n======READ=FROM=WORD=ARRAY================\n");
 		// read
 		for ( char r: wordToGuess)
 		{
-			System.out.print(r + " ");
+			buffer.append(r + " ");
 		}
-		System.out.println("\n======READ=FROM=GUESS=ARRAY================");
+		buffer.append("\n======READ=FROM=GUESS=ARRAY================\n");
 		// read
 		for ( char r: guessAttempts)
 		{
-			System.out.print(r + " ");
+			buffer.append(r + " ");
 		}
 		
-		System.out.println("\n=======================\n");	
+		buffer.append("\n=======================\n");	
 		
+		return buffer.toString();
 	}
+	
 	
 	
 	public static void main(String[] args)
