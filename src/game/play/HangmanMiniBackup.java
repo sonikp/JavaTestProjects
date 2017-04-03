@@ -1,65 +1,32 @@
 package game.play;
 
+/**
+ * Backup after stringbuilder added
+ * cleanup to finish game today
+ */
+
+
 import java.util.Scanner;
 
-public class HangmanMini
+public class HangmanMiniBackup
 {
 	//variables
 	String userInput = "mississippi";
-	String guessLetterString = "p";
+	String guessLetterString = "r";
 	int arraySize;
 	char guessLetter = 'r';
 	char[] wordToGuess;
 	char[] guessAttempts;
 	
 	// constructor
-	public HangmanMini()
-	{
-		// empty constructor
-	}
-	
-	public HangmanMini(String word)
+	public HangmanMiniBackup(String word)
 	{
 		setInputWord(word);
 	}
 	
-	public void checkForGuessLetter()
+	public void guessLetter()
 	{
-		System.out.println("word " + userInput + " GuessLetter " + guessLetter);
-		
-		int ifGuessExists = userInput.indexOf(guessLetter);		// check if guessed letter exists in word, -1 is not present
-		
-		if ( ifGuessExists != -1)
-		{
-			// find out if array contains a particular guessed letter (guessLetter) and if where
-			for (int i = 0; i < userInput.length(); i++)
-			{
-				
-				if ( guessLetter == wordToGuess[i] )
-				{
-					guessAttempts[i] = guessLetter;
-//					correctGuess++;
-				}
-				/*
-				if ( guessLetter == wordToGuess[i] )
-				{
-					guessAttempts[i] = guessLetter;
-//					correctGuess++;
-				}
-					
-				*/
-			}
-			
-//			displayGuessResults();
-
-		}
-		else
-		{
-			System.out.println("\n-----Letter does not exist!!!------");
-//			displayGuessResults();
-		}
-
-		
+		guessLetter = 'r';
 	}
 	
 //	public void populateArrays()
@@ -156,7 +123,7 @@ public class HangmanMini
 	
 	public static void main(String[] args)
 	{
-		HangmanMini hm = new HangmanMini("Wooloomooloo");
+		HangmanMiniBackup hm = new HangmanMiniBackup("Wooloomooloo");
 		System.out.println("HangmanMini:Main Method\n");
 		System.out.println(hm.userInput);
 		System.out.println(hm.guessLetter);
@@ -164,11 +131,7 @@ public class HangmanMini
 		
 	}
 	
-	public void setGuessLetter(String userInput)
-	{
-//		String chooseLetter = userInput;
-//		guessLetter = chooseLetter.next().charAt(0);
-	}
+	
 	
 	
 	

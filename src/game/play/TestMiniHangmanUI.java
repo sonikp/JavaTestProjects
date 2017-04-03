@@ -26,10 +26,12 @@ import javax.swing.JTextField;
 import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
 
-public class HangmanMiniUI extends JFrame implements ActionListener
+public class TestMiniHangmanUI extends JFrame implements ActionListener
 {
 	// variables
-	HangmanMini playgame = new HangmanMini();
+	TestMiniHangman playgame = new TestMiniHangman();
+
+
 	
 	// Organization / Design
 	JPanel mainPanel = new JPanel();	// contains Everything
@@ -42,9 +44,9 @@ public class HangmanMiniUI extends JFrame implements ActionListener
 	
 	// west
 	JPanel west = new JPanel();			// contains all the buttons
-	JButton word = new JButton("!What is word!");
-	JButton character = new JButton("What is the letter");
-	JButton letterInWord = new JButton("Letter in word?");
+	JButton displayWord = new JButton("!Display Word!");
+	JButton displayLetter = new JButton("-Display Letter-");
+	JButton letterInWord = new JButton("Check If Letter Exists");
 	JButton newWord = new JButton("!Update Word!");
 	JButton newGuessLetter = new JButton("Guess Letter");
 	JButton testMethod = new JButton("!(Test) Display Words!");
@@ -59,14 +61,18 @@ public class HangmanMiniUI extends JFrame implements ActionListener
 	
 	
 	// constructor
-	public HangmanMiniUI()
+	public TestMiniHangmanUI()
 	{
 		super("Hangman");
 		setDefaultCloseOperation(EXIT_ON_CLOSE);
 		setLocationRelativeTo(null);
 		setSize(600,400);
 		setResizable(false);
-
+		
+//		// populate arrays
+//		playgame.populateArrays();
+//		playgame.printArrays();
+		
 		// test values
 		System.out.println("HM UI : Main Method");
 		System.out.println(playgame.userInput);
@@ -86,8 +92,8 @@ public class HangmanMiniUI extends JFrame implements ActionListener
 		
 		
 		// add listeners
-		word.addActionListener(this);
-		character.addActionListener(this);
+		displayWord.addActionListener(this);
+		displayLetter.addActionListener(this);
 		letterInWord.addActionListener(this);
 		newWord.addActionListener(this);
 		newGuessLetter.addActionListener(this);
@@ -95,8 +101,8 @@ public class HangmanMiniUI extends JFrame implements ActionListener
 		
 		
 		// add buttons to west panel
-		west.add(word);
-		west.add(character);
+		west.add(displayWord);
+		west.add(displayLetter);
 		west.add(letterInWord);
 		west.add(newWord);
 		west.add(newGuessLetter);
@@ -117,38 +123,25 @@ public class HangmanMiniUI extends JFrame implements ActionListener
 		// object to decide where the event came from
 		Object src = e.getSource();
 		
-		//display 'hardcoded' word
-		if (src.equals(word))
+		//display word
+		if (src.equals(displayWord))
 		{
-			// display 'hard-coded' word to be guessed by clicking the button
-			System.out.println(playgame.userInput);
-			print(playgame.userInput);
 			
-			// make space
-			String space = "\n\n";
-			System.out.println(space);
-			print(space);
-			printEnd();
-
-		}
-		
-		// Sets a new word from input
-		if (src.equals(newWord))
-		{
-			// display number from input field in textArea
-//			int num = Integer.parseInt(input.getText());
-			String inputString = input.getText();
-			print(inputString + " <= is the new word");
-//			input.setText("Letter Submitted!");
+			// COMPLETED
+			String buffer = playgame.getWord();
+			hangman_textarea.setText(buffer);
 			
-			playgame.setInputWord(inputString);
-			printEnd();
 
 		}
 		
 		//display 'hardcoded' letter as String
-		if (src.equals(character))
+		if (src.equals(displayLetter))
 		{
+//			String buffer = playgame.getGuessLetter();
+//			hangman_textarea.setText(buffer);
+			
+			playgame.getGuessLetter();
+			/*
 			// display 'hard-coded' word to be guessed by clicking the button
 			print(playgame.guessLetterString);
 			
@@ -157,17 +150,40 @@ public class HangmanMiniUI extends JFrame implements ActionListener
 			System.out.println(space);
 			print(space);
 			printEnd();
-			
+			*/
 
 		}
+		
+		// Sets a new word from input
+		if (src.equals(newWord))
+		{
+			/*
+			// display number from input field in textArea
+//			int num = Integer.parseInt(input.getText());
+			String inputString = input.getText();
+			print(inputString + " <= is the new word");
+//			input.setText("Letter Submitted!");
+			
+			playgame.setInputWord(inputString);
+			printEnd();
+			*/
+
+		}
+		
+
 		
 		
 		// DisplayNumber from input field
 		if (src.equals(letterInWord))
 		{
-			playgame.checkForGuessLetter();
+			
+			
+			playgame.checkIfLetterExistsInWord();
 			
 			/*
+			playgame.checkForGuessLetter();
+			
+		
 			// display number from input field in textArea
 			int num = Integer.parseInt(input.getText());
 			print(num + " is a number");
@@ -193,6 +209,7 @@ public class HangmanMiniUI extends JFrame implements ActionListener
 		// Display Letter to guess from input field
 		if (src.equals(newGuessLetter))
 		{
+			/*
 			// display letter from input field in textArea
 			String inputString = input.getText();
 			print(inputString + " is a letter");
@@ -200,19 +217,18 @@ public class HangmanMiniUI extends JFrame implements ActionListener
 			System.out.println(inputString);
 			playgame.checkForGuessLetter();
 			printEnd();
+			*/
 
 		}
 		
 		// Display Letter to guess from input field
 		if (src.equals(testMethod))
 		{
-
-			
-
+			/*
 			String buffer = playgame.populateArrays();
 			hangman_textarea.setText(buffer);
 //			System.out.println(buffer);
-			
+			*/
 
 			
 			
@@ -250,6 +266,8 @@ public class HangmanMiniUI extends JFrame implements ActionListener
 	public static void main(String[] args)
 	{
 		
-		new HangmanMiniUI();
+
+		new TestMiniHangmanUI();
+
 	}
 }
