@@ -8,6 +8,7 @@ import java.util.Scanner;
 public class TestMiniHangman
 {
 	char guessLetter = 'i';
+	String guessLetterString;
 	String userInput = "mississippi";
 	int arraySize;
 	
@@ -18,13 +19,23 @@ public class TestMiniHangman
 	public TestMiniHangman()
 	{
 		// empty constructor
+		populateArrays();
 	}
 	
 	public char getGuessLetter()	
 	{		
 		System.out.println("GuessLetter: " + guessLetter);
+//		guessLetterString = Character.toString(guessLetter);
+		getGuessLetterString();
 		prettify();
 		return guessLetter;
+	}
+	
+	public String getGuessLetterString()
+	{
+		guessLetterString = Character.toString(guessLetter);
+		System.out.println("GuessLetterString: " + guessLetterString);
+		return guessLetterString;
 	}
 	
 	public void setGuessLetter(char L)
@@ -34,6 +45,7 @@ public class TestMiniHangman
 	
 	public String getWord()
 	{
+		arraySize = userInput.length();
 		StringBuilder buffer = new StringBuilder();
 		buffer.append("userInput:" + userInput + " arraySize " + arraySize);
 		
@@ -58,9 +70,11 @@ public class TestMiniHangman
 		prettify();
 	}
 	
-	public void populateArrays()
+	public String populateArrays()
 	{
+		StringBuilder buffer = new StringBuilder();
 		System.out.println("2. populateArrays()");
+		arraySize = userInput.length();
 		wordToGuess = new char[arraySize];
 		guessAttempts = new char[arraySize];
 		
@@ -76,7 +90,24 @@ public class TestMiniHangman
 			guessAttempts[i] = '-';
 		}
 		
-		prettify();
+		buffer.append("\n======READ=FROM=WORD=ARRAY================\n");
+		// read
+		for ( char r: wordToGuess)
+		{
+			buffer.append(r + " ");
+		}
+		buffer.append("\n======READ=FROM=GUESS=ARRAY================\n");
+		// read
+		for ( char r: guessAttempts)
+		{
+			buffer.append(r + " ");
+		}
+		
+		buffer.append("\n=======================\n");	
+		
+		return buffer.toString();
+		
+//		prettify();
 	}
 	
 	public void printArrays()
@@ -99,6 +130,98 @@ public class TestMiniHangman
 		prettify();
 	}
 	
+	/*
+	// DEAD CODE
+	public String populateArrays()
+	{
+		StringBuilder buffer = new StringBuilder();
+		buffer.append("userInput:" + userInput + " arraySize " + arraySize);
+		
+		arraySize = userInput.length();
+		
+		// scoring
+//		correctGuess = arraySize;
+		
+		
+		
+		wordToGuess = new char[arraySize];
+		guessAttempts = new char[arraySize];
+		
+		// Populate array with userInput
+		for (int i = 0; i < userInput.length(); i++)
+		{
+			wordToGuess[i] = userInput.charAt(i);
+		}
+		
+		// Populate guessAttempt with --
+		for (int i = 0; i < userInput.length(); i++)
+		{
+			guessAttempts[i] = '-';
+		}
+		
+		// DEBUG CODE
+		buffer.append("\n======READ=FROM=WORD=ARRAY================\n");
+		// read
+		for ( char r: wordToGuess)
+		{
+			buffer.append(r + " ");
+		}
+		buffer.append("\n======READ=FROM=GUESS=ARRAY================\n");
+		// read
+		for ( char r: guessAttempts)
+		{
+			buffer.append(r + " ");
+		}
+		
+		buffer.append("\n=======================\n");	
+		
+		return buffer.toString();
+	}
+	*/
+	
+	public String printGuessArray()
+	{
+		System.out.println("\nprintGuessArray");
+		/*
+		for ( char r: guessAttempts)
+		{
+			System.out.print(r + " ");
+		}
+		*/
+		StringBuilder buffer = new StringBuilder();
+		// read
+		for ( char r: guessAttempts)
+		{
+			buffer.append(r + " ");
+		}
+		return buffer.toString();
+	}
+	
+	
+	// experimental
+	public String printArraysUI()
+	{
+		StringBuilder buffer = new StringBuilder();
+		buffer.append("3. printArrays()");
+		buffer.append("\n======READ=FROM=WORD=ARRAY================");
+		// read
+		for ( char r: wordToGuess)
+		{
+			buffer.append(r + " ");
+		}
+		buffer.append("\n======READ=FROM=GUESS=ARRAY================");
+		// read
+		for ( char r: guessAttempts)
+		{
+			buffer.append(r + " ");
+		}
+		
+		buffer.append("\n=======================\n");	
+		prettify();
+		return buffer.toString();
+	}
+	
+	
 	public void checkIfLetterExistsInWord()
 	{
 		getGuessLetter();
@@ -118,10 +241,12 @@ public class TestMiniHangman
 						
 			}
 			// read
+			
 			for ( char r: guessAttempts)
 			{
 				System.out.print(r + " ");
 			}
+			printGuessArray();
 		}
 		else
 		{
