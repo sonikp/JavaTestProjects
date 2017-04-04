@@ -46,6 +46,8 @@ public class TestMiniHangmanUI extends JFrame implements ActionListener
 	JPanel west = new JPanel();			// contains all the buttons
 	JButton displayWord = new JButton("!Display Word!");
 	JButton displayLetter = new JButton("!Display Letter!");
+	JButton updateWord = new JButton("-Update Word-");
+	JButton updateLetter = new JButton("-Update Letter-");
 	JButton letterInWord = new JButton("!Check If Letter Exists!");
 	JButton newWord = new JButton("-(Clear Arrays)-Update Word-");
 	JButton newGuessLetter = new JButton("!Display Guess Status!");
@@ -94,6 +96,8 @@ public class TestMiniHangmanUI extends JFrame implements ActionListener
 		// add listeners
 		displayWord.addActionListener(this);
 		displayLetter.addActionListener(this);
+		updateWord.addActionListener(this);
+		updateLetter.addActionListener(this);
 		letterInWord.addActionListener(this);
 		newWord.addActionListener(this);
 		newGuessLetter.addActionListener(this);
@@ -103,6 +107,8 @@ public class TestMiniHangmanUI extends JFrame implements ActionListener
 		// add buttons to west panel
 		west.add(displayWord);
 		west.add(displayLetter);
+		west.add(updateWord);
+		west.add(updateLetter);
 		west.add(letterInWord);
 		west.add(newWord);
 		west.add(newGuessLetter);
@@ -153,6 +159,52 @@ public class TestMiniHangmanUI extends JFrame implements ActionListener
 			print(space);
 			printEnd();
 			*/
+
+		}
+		
+		//display 'hardcoded' letter as String
+		if (src.equals(updateWord))
+		{
+			// display number from input field in textArea
+//			int num = Integer.parseInt(input.getText());
+			String inputString = input.getText();
+			print(inputString + " <= is the new word");
+//			input.setText("Letter Submitted!");
+			
+			playgame.setWord(inputString);
+			printEnd();
+
+			
+			
+			/*
+			String buffer = playgame.getGuessLetterString();
+			hangman_textarea.setText(buffer);
+			
+
+			playgame.getGuessLetter();
+			playgame.getGuessLetterString();
+			*/
+			/*
+			// display 'hard-coded' word to be guessed by clicking the button
+			print(playgame.guessLetterString);
+			
+			// make space
+			String space = "\n\n";
+			System.out.println(space);
+			print(space);
+			printEnd();
+			*/
+
+		}
+		
+		//change letter ERROR, type mismatch
+		if (src.equals(updateLetter))
+		{
+
+			String inputString = input.getText();
+			print(inputString + " <= is the new word");
+//			playgame.setGuessLetter(inputString);
+			printEnd();
 
 		}
 		
