@@ -14,13 +14,10 @@ public class TestMiniHangman
 	char[] wordToGuess;
 	char[] guessAttempts;
 	
+	// constructor
 	public TestMiniHangman()
 	{
-		
-		
-		
-
-		
+		// empty constructor
 	}
 	
 	public char getGuessLetter()	
@@ -197,8 +194,8 @@ public class TestMiniHangman
 	{
 		TestMiniHangman playgame = new TestMiniHangman();
 		
-		playgame.getWord();
-		/*
+//		playgame.getWord();
+
 		// gameplay
 		playgame.guessLetterInWord();
 		playgame.populateArrays();
@@ -208,6 +205,7 @@ public class TestMiniHangman
 		playgame.checkIfLetterExistsInWord();
 		playgame.updateIfLetterExistsInWord();
 		playgame.checkGuessArray();
+		/*
 		//===========================
 		playgame.setGuessLetter('i');
 		playgame.getGuessLetter();
