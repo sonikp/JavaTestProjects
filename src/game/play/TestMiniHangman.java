@@ -25,7 +25,6 @@ public class TestMiniHangman
 	public char getGuessLetter()	
 	{		
 		System.out.println("GuessLetter: " + guessLetter);
-//		guessLetterString = Character.toString(guessLetter);
 		getGuessLetterString();
 		prettify();
 		return guessLetter;
@@ -56,6 +55,9 @@ public class TestMiniHangman
 	public void setWord(String w)
 	{
 		this.userInput = w;
+		arraySize = userInput.length();
+		wordToGuess = new char[arraySize];
+		guessAttempts = new char[arraySize];
 	}
 
 	
@@ -66,8 +68,7 @@ public class TestMiniHangman
 		arraySize = userInput.length();
 		System.out.println("userInput:" + userInput + " && guessLetter: " + guessLetter
 				+ " && arraySize: " + arraySize);
-		
-		prettify();
+
 	}
 	
 	public String populateArrays()
@@ -107,7 +108,6 @@ public class TestMiniHangman
 		
 		return buffer.toString();
 		
-//		prettify();
 	}
 	
 	public void printArrays()
@@ -127,67 +127,15 @@ public class TestMiniHangman
 		}
 		
 		System.out.println("\n=======================\n");	
-		prettify();
+
 	}
 	
-	/*
-	// DEAD CODE
-	public String populateArrays()
-	{
-		StringBuilder buffer = new StringBuilder();
-		buffer.append("userInput:" + userInput + " arraySize " + arraySize);
-		
-		arraySize = userInput.length();
-		
-		// scoring
-//		correctGuess = arraySize;
-		
-		
-		
-		wordToGuess = new char[arraySize];
-		guessAttempts = new char[arraySize];
-		
-		// Populate array with userInput
-		for (int i = 0; i < userInput.length(); i++)
-		{
-			wordToGuess[i] = userInput.charAt(i);
-		}
-		
-		// Populate guessAttempt with --
-		for (int i = 0; i < userInput.length(); i++)
-		{
-			guessAttempts[i] = '-';
-		}
-		
-		// DEBUG CODE
-		buffer.append("\n======READ=FROM=WORD=ARRAY================\n");
-		// read
-		for ( char r: wordToGuess)
-		{
-			buffer.append(r + " ");
-		}
-		buffer.append("\n======READ=FROM=GUESS=ARRAY================\n");
-		// read
-		for ( char r: guessAttempts)
-		{
-			buffer.append(r + " ");
-		}
-		
-		buffer.append("\n=======================\n");	
-		
-		return buffer.toString();
-	}
-	*/
+	
 	
 	public String printGuessArray()
 	{
 		System.out.println("\nprintGuessArray");
-		/*
-		for ( char r: guessAttempts)
-		{
-			System.out.print(r + " ");
-		}
-		*/
+
 		StringBuilder buffer = new StringBuilder();
 		// read
 		for ( char r: guessAttempts)
@@ -225,7 +173,14 @@ public class TestMiniHangman
 	public void checkIfLetterExistsInWord()
 	{
 		getGuessLetter();
-		populateArrays();
+//		populateArrays();
+		
+		// to set up buffer size
+//		arraySize = userInput.length();
+//		wordToGuess = new char[arraySize];
+//		guessAttempts = new char[arraySize];
+		
+		
 		int ifGuessExists = userInput.indexOf(guessLetter);	
 		System.out.println(ifGuessExists);
 		if ( ifGuessExists != -1)
@@ -251,15 +206,27 @@ public class TestMiniHangman
 		else
 		{
 			System.out.println("DOES NOT EXIST!");
+			doesNotExist();
 		}
 		
 	}
 	
+	public String doesNotExist()
+	{
+		
+		StringBuilder buffer = new StringBuilder();
+		buffer.append("Does Not Exist");
+		return buffer.toString();
+		
+
+	}
+	
 	public void updateIfLetterExistsInWord()
 	{
+		/*
 		guessLetter = 'm';
 		ifGuessExists();
-		/*
+	
 		int ifGuessExists = userInput.indexOf(guessLetter);	
 		System.out.println(ifGuessExists);
 		if ( ifGuessExists != -1)
@@ -274,7 +241,8 @@ public class TestMiniHangman
 				}
 						
 			}
-		}*/
+		}
+		*/
 	}
 	
 	public void ifGuessExists()
