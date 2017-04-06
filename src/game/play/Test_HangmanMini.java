@@ -2,7 +2,7 @@ package game.play;
 
 import java.util.Scanner;
 
-public class HangmanMini
+public class Test_HangmanMini
 {
 	//variables
 	String userInput = "mississippi";
@@ -13,12 +13,12 @@ public class HangmanMini
 	char[] guessAttempts;
 	
 	// constructor
-	public HangmanMini()
+	public Test_HangmanMini()
 	{
 		// empty constructor
 	}
 	
-	public HangmanMini(String word)
+	public Test_HangmanMini(String word)
 	{
 		setInputWord(word);
 	}
@@ -156,7 +156,7 @@ public class HangmanMini
 	
 	public static void main(String[] args)
 	{
-		HangmanMini hm = new HangmanMini("Wooloomooloo");
+		Test_HangmanMini hm = new Test_HangmanMini("Wooloomooloo");
 		System.out.println("HangmanMini:Main Method\n");
 		System.out.println(hm.userInput);
 		System.out.println(hm.guessLetter);

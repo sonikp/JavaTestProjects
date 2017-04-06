@@ -25,7 +25,7 @@ import java.lang.Runnable;
 
 
 
-public class HangTestUI extends JFrame implements ActionListener
+public class T123HangTestUI extends JFrame implements ActionListener
 {
 	// variables
 	Primes primes = new Primes(1000);
@@ -62,7 +62,7 @@ public class HangTestUI extends JFrame implements ActionListener
 	
 	
 	// constructor
-	public HangTestUI()
+	public T123HangTestUI()
 	{
 		super("Prime Number Generation");
 		setDefaultCloseOperation(EXIT_ON_CLOSE);
@@ -178,7 +178,7 @@ public class HangTestUI extends JFrame implements ActionListener
 	
 	public static void main(String[] args)
 	{
-		new HangTestUI();
+		new T123HangTestUI();
 //		new PrimeGen();
 	}
 	

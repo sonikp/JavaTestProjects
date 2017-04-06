@@ -26,10 +26,10 @@ import javax.swing.JTextField;
 import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
 
-public class TestMiniHangmanUI extends JFrame implements ActionListener
+public class MiniHangmanUI extends JFrame implements ActionListener
 {
 	// variables
-	TestMiniHangman playgame = new TestMiniHangman();
+	MiniHangman playgame = new MiniHangman();
 
 
 	
@@ -49,9 +49,9 @@ public class TestMiniHangmanUI extends JFrame implements ActionListener
 	JButton updateWord = new JButton("Update Word");
 	JButton updateLetter = new JButton("Update Letter");
 	JButton letterInWord = new JButton("Check If Letter Exists");
-	JButton newWord = new JButton("-(Clear Arrays)-Update Word-");
-	JButton newGuessLetter = new JButton("!Display Guess Status!");
-	JButton testMethod = new JButton("!Display Game Status!");
+	JButton newWord = new JButton("(Initialize Arrays)-Update Word");
+	JButton newGuessLetter = new JButton("Display Guess Status");
+	JButton testMethod = new JButton("Display Game Status");
 	
 	// south
 	JPanel south = new JPanel(); 		// contains input along with variables
@@ -63,7 +63,7 @@ public class TestMiniHangmanUI extends JFrame implements ActionListener
 	
 	
 	// constructor
-	public TestMiniHangmanUI()
+	public MiniHangmanUI()
 	{
 		super("Hangman");
 		setDefaultCloseOperation(EXIT_ON_CLOSE);
@@ -71,11 +71,7 @@ public class TestMiniHangmanUI extends JFrame implements ActionListener
 		setSize(600,400);
 		setResizable(false);
 		
-//		// populate arrays
-//		playgame.populateArrays();
-//		playgame.printArrays();
-		
-		// test values
+		// DEBUG: test values
 		System.out.println("HM UI : Main Method");
 		System.out.println(playgame.userInput);
 		System.out.println(playgame.guessLetter);
@@ -144,69 +140,29 @@ public class TestMiniHangmanUI extends JFrame implements ActionListener
 		{
 			String buffer = playgame.getGuessLetterString();
 			hangman_textarea.setText(buffer);
-			
-			// update both the CharArray and StringArray
-//			playgame.getGuessLetter();
-//			playgame.getGuessLetterString();
-			/*
-			// display 'hard-coded' word to be guessed by clicking the button
-			print(playgame.guessLetterString);
-			
-			// make space
-			String space = "\n\n";
-			System.out.println(space);
-			print(space);
-			printEnd();
-			*/
 
 		}
 		
-		//display 'hardcoded' letter as String
+		//update word to guess
 		if (src.equals(updateWord))
 		{
 
 			String inputString = input.getText();
 			hangman_textarea.setText(inputString);
-//			print(inputString + " <= is the new word");
-//			input.setText("Letter Submitted!");
 			
 			playgame.setWord(inputString);
 			input.setText("");
-//			printEnd();
-
-			
-			
-			/*
-			String buffer = playgame.getGuessLetterString();
-			hangman_textarea.setText(buffer);
-			
-
-			playgame.getGuessLetter();
-			playgame.getGuessLetterString();
-			*/
-			/*
-			// display 'hard-coded' word to be guessed by clicking the button
-			print(playgame.guessLetterString);
-			
-			// make space
-			String space = "\n\n";
-			System.out.println(space);
-			print(space);
-			printEnd();
-			*/
 
 		}
 		
-		//change letter COMPLETED
+		//change letter 
 		if (src.equals(updateLetter))
 		{
-
 			String inputString = input.getText();
 			char chr = inputString.charAt(0);
 			playgame.setGuessLetter(chr);
 			hangman_textarea.setText(inputString);
 			input.setText("");
-//			hangman_textarea.setText("      <=new letter");
 
 		}
 		
@@ -215,13 +171,9 @@ public class TestMiniHangmanUI extends JFrame implements ActionListener
 		{
 			String buffer = playgame.populateArrays();
 			hangman_textarea.setText(buffer);
-//			playgame.populateArrays();
-
 
 		}
-		
 
-		
 		
 		// DisplayNumber from input field
 		if (src.equals(letterInWord))
@@ -259,9 +211,7 @@ public class TestMiniHangmanUI extends JFrame implements ActionListener
 
 	}
 	
-	
 
-	
 	public void printEnd()
 	{
 		print("\n\n---------------------------------------" + 
@@ -272,7 +222,7 @@ public class TestMiniHangmanUI extends JFrame implements ActionListener
 	{
 		
 
-		new TestMiniHangmanUI();
+		new MiniHangmanUI();
 
 	}
 }

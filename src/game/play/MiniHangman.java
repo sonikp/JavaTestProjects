@@ -5,7 +5,7 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Scanner;
 
-public class TestMiniHangman
+public class MiniHangman
 {
 	char guessLetter = 'i';
 	String guessLetterString;
@@ -16,7 +16,7 @@ public class TestMiniHangman
 	char[] guessAttempts;
 	
 	// constructor
-	public TestMiniHangman()
+	public MiniHangman()
 	{
 		// empty constructor
 		populateArrays();
@@ -285,7 +285,7 @@ public class TestMiniHangman
 	
 	public static void main(String[] args)
 	{
-		TestMiniHangman playgame = new TestMiniHangman();
+		MiniHangman playgame = new MiniHangman();
 		
 //		playgame.getWord();
 

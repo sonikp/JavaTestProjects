@@ -8,7 +8,7 @@ package game.play;
 
 import java.util.Scanner;
 
-public class HangmanMiniBackup
+public class Test_HangmanMiniBackup
 {
 	//variables
 	String userInput = "mississippi";
@@ -19,7 +19,7 @@ public class HangmanMiniBackup
 	char[] guessAttempts;
 	
 	// constructor
-	public HangmanMiniBackup(String word)
+	public Test_HangmanMiniBackup(String word)
 	{
 		setInputWord(word);
 	}
@@ -123,7 +123,7 @@ public class HangmanMiniBackup
 	
 	public static void main(String[] args)
 	{
-		HangmanMiniBackup hm = new HangmanMiniBackup("Wooloomooloo");
+		Test_HangmanMiniBackup hm = new Test_HangmanMiniBackup("Wooloomooloo");
 		System.out.println("HangmanMini:Main Method\n");
 		System.out.println(hm.userInput);
 		System.out.println(hm.guessLetter);

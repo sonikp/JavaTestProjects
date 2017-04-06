@@ -26,10 +26,10 @@ import javax.swing.JTextField;
 import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
 
-public class HangmanMiniUI extends JFrame implements ActionListener
+public class T123HangmanMiniUI extends JFrame implements ActionListener
 {
 	// variables
-	HangmanMini playgame = new HangmanMini();
+	Test_HangmanMini playgame = new Test_HangmanMini();
 	
 	// Organization / Design
 	JPanel mainPanel = new JPanel();	// contains Everything
@@ -59,7 +59,7 @@ public class HangmanMiniUI extends JFrame implements ActionListener
 	
 	
 	// constructor
-	public HangmanMiniUI()
+	public T123HangmanMiniUI()
 	{
 		super("Hangman");
 		setDefaultCloseOperation(EXIT_ON_CLOSE);
@@ -250,6 +250,6 @@ public class HangmanMiniUI extends JFrame implements ActionListener
 	public static void main(String[] args)
 	{
 		
-		new HangmanMiniUI();
+		new T123HangmanMiniUI();
 	}
 }
