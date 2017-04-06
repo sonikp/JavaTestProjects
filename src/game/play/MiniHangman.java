@@ -18,7 +18,7 @@ public class MiniHangman
 	// constructor
 	public MiniHangman()
 	{
-		// empty constructor
+		// initialize all the arrays
 		populateArrays();
 	}
 	
@@ -173,13 +173,6 @@ public class MiniHangman
 	public void checkIfLetterExistsInWord()
 	{
 		getGuessLetter();
-//		populateArrays();
-		
-		// to set up buffer size
-//		arraySize = userInput.length();
-//		wordToGuess = new char[arraySize];
-//		guessAttempts = new char[arraySize];
-		
 		
 		int ifGuessExists = userInput.indexOf(guessLetter);	
 		System.out.println(ifGuessExists);
@@ -223,26 +216,7 @@ public class MiniHangman
 	
 	public void updateIfLetterExistsInWord()
 	{
-		/*
-		guessLetter = 'm';
-		ifGuessExists();
-	
-		int ifGuessExists = userInput.indexOf(guessLetter);	
-		System.out.println(ifGuessExists);
-		if ( ifGuessExists != -1)
-		{
-			System.out.println("EXISTS!");
-			for (int i = 0; i < userInput.length(); i++)
-			{
-				
-				if ( guessLetter == wordToGuess[i] )
-				{
-					guessAttempts[i] = guessLetter;
-				}
-						
-			}
-		}
-		*/
+
 	}
 	
 	public void ifGuessExists()

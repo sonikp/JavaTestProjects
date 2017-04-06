@@ -1,4 +1,4 @@
-package game.play;
+package game.play.TBD;
 
 /**
  * Create a two player version of hangman. The program should first ask for the first player to enter a word and save the word. 

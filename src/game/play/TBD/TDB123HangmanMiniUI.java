@@ -1,4 +1,4 @@
-package game.play;
+package game.play.TBD;
 
 /**
  * UI based on PrimesGen & Primes
@@ -26,7 +26,7 @@ import javax.swing.JTextField;
 import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
 
-public class T123HangmanMiniUI extends JFrame implements ActionListener
+public class TDB123HangmanMiniUI extends JFrame implements ActionListener
 {
 	// variables
 	Test_HangmanMini playgame = new Test_HangmanMini();
@@ -59,7 +59,7 @@ public class T123HangmanMiniUI extends JFrame implements ActionListener
 	
 	
 	// constructor
-	public T123HangmanMiniUI()
+	public TDB123HangmanMiniUI()
 	{
 		super("Hangman");
 		setDefaultCloseOperation(EXIT_ON_CLOSE);
@@ -250,6 +250,6 @@ public class T123HangmanMiniUI extends JFrame implements ActionListener
 	public static void main(String[] args)
 	{
 		
-		new T123HangmanMiniUI();
+		new TDB123HangmanMiniUI();
 	}
 }

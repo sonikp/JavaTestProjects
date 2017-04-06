@@ -4,6 +4,13 @@ package game.play;
  * UI based on PrimesGen & Primes
  */
 
+/**
+ * Need to:
+ * - be able to read a game status without reinitializing the arrays
+ * - display letter no in word message
+ * - display ongoing status as game progresses
+ */
+
 //import game.play.Hangman;
 //import youtube.swingtutorial.List;
 //import youtube.swingtutorial.Primes;
@@ -211,7 +218,7 @@ public class MiniHangmanUI extends JFrame implements ActionListener
 
 	}
 	
-
+	// not used
 	public void printEnd()
 	{
 		print("\n\n---------------------------------------" + 

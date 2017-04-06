@@ -1,4 +1,4 @@
-package game.play;
+package game.play.TBD;
 
 /**
  * Create a two player version of hangman. The program should first ask for the first player to enter a word and save the word. 
@@ -27,7 +27,7 @@ import java.util.Scanner;
 
 
 
-public class TBD_HangmanOld
+public class TBD_Hangman2backup
 {
 	// variables
 	
@@ -53,7 +53,7 @@ public class TBD_HangmanOld
 	
 	
 	// constructor
-	public TBD_HangmanOld()
+	public TBD_Hangman2backup()
 	{
 		System.out.println("Lets play hangman\t");
 		System.out.println("You get 6 guesses, you still have:  " + numOfGuesses + " remaining");
@@ -203,7 +203,7 @@ public class TBD_HangmanOld
 	public static void main(String[] args)
 	{
 		
-		new TBD_HangmanOld();
+		new TBD_Hangman2backup();
 	
 		
 	}

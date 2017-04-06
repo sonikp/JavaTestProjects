@@ -1,4 +1,4 @@
-package game.play;
+package game.play.TBD;
 
 /**
  * Backup after stringbuilder added
@@ -28,7 +28,7 @@ import javax.swing.JTextField;
 import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
 
-public class T123HangmanMiniUIBackup extends JFrame implements ActionListener
+public class TBD123HangmanMiniUIBackup extends JFrame implements ActionListener
 {
 	// variables
 	Test_HangmanMini playgame = new Test_HangmanMini("word");
@@ -61,7 +61,7 @@ public class T123HangmanMiniUIBackup extends JFrame implements ActionListener
 	
 	
 	// constructor
-	public T123HangmanMiniUIBackup()
+	public TBD123HangmanMiniUIBackup()
 	{
 		super("Hangman");
 		setDefaultCloseOperation(EXIT_ON_CLOSE);
@@ -233,6 +233,6 @@ public class T123HangmanMiniUIBackup extends JFrame implements ActionListener
 	public static void main(String[] args)
 	{
 		
-		new T123HangmanMiniUIBackup();
+		new TBD123HangmanMiniUIBackup();
 	}
 }

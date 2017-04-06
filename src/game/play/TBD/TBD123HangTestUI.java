@@ -1,4 +1,4 @@
-package game.play;
+package game.play.TBD;
 
 //Layouts
 import java.awt.BorderLayout;
@@ -12,6 +12,10 @@ import javax.swing.JPanel;
 import javax.swing.JLabel;
 import javax.swing.JTextArea;
 import javax.swing.JTextField;
+
+import game.play.Hangman;
+import game.play.Primes;
+
 import javax.swing.JScrollPane;
 import javax.swing.JButton;
 import javax.swing.JProgressBar;
@@ -25,7 +29,7 @@ import java.lang.Runnable;
 
 
 
-public class T123HangTestUI extends JFrame implements ActionListener
+public class TBD123HangTestUI extends JFrame implements ActionListener
 {
 	// variables
 	Primes primes = new Primes(1000);
@@ -62,7 +66,7 @@ public class T123HangTestUI extends JFrame implements ActionListener
 	
 	
 	// constructor
-	public T123HangTestUI()
+	public TBD123HangTestUI()
 	{
 		super("Prime Number Generation");
 		setDefaultCloseOperation(EXIT_ON_CLOSE);
@@ -178,7 +182,7 @@ public class T123HangTestUI extends JFrame implements ActionListener
 	
 	public static void main(String[] args)
 	{
-		new T123HangTestUI();
+		new TBD123HangTestUI();
 //		new PrimeGen();
 	}
 	
