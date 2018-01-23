@@ -30,6 +30,8 @@ When we play dice values are:
 next new game, the entire looser of the last game is automatically the starter of the new game.
 
 
+Here are the rules:	Schock - a German Dice Game
+https://h2g2.com/edited_entry/A593183
 
 
 
